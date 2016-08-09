@@ -1,0 +1,111 @@
+Intro to Object Orientation
+
+
+
+
+What is Object Orientation?
+	-allows you to produce code that is more maintainable and scalable at the systems leve
+
+
+Classes
+
+
+
+
+What are three signs you should probably use a class?
+	-Your objects start needing functionality of their own (e.g. methods).
+	-Multiple objects need access to the same general behavior.
+	-You want multiple copies of the same object to each have their own individual attributes and state (instance variables).
+
+
+What's the difference between a Hash and a Class?
+	-in a class, each instance can have its own attributes
+
+What is an "Instance" of a class?
+	-Creating a new object of that class
+
+How do you "Instantiate" an instance of a class?
+	-Using the .new method
+
+How should classes be named?
+	-Singular Camel Case LikeThisOne
+
+
+
+
+Instance Variable and Methods
+
+
+
+
+What are "Instance Variables"?
+	-attributes unique to the specific instance
+
+When and where do you typically assign instance variables to a 
+class?
+	-You will usually set up the instance variables for the first time in your initialize method so they're ready for you right away
+
+What are "Instance Methods" and how do you call them?
+	-Methods inside the instance of a class that give them actions
+	they are called on the class using dot
+
+What are "Getters and Setters"?
+	-by default, instance variables cannot be accessed from outside the class. To access them, you have to define a method that returns the instance variable or changes the value
+
+How do they relate to the idea of a class interface?
+	-the idea is to create fortifide method with a small area to interacte with its internals
+
+Who is allowed to access instance variables?
+	-
+
+What is the function of attr_accessor?
+	-ruby magic that allows you to create a getter and setter method
+
+What are its "read-only" and "write-only" relatives?
+	attr_reader, attr_writer
+
+When should you make something like an instance variable visible 
+or editable?
+	-
+
+Is self required when running class or instance methods or 
+retrieving instance variables?
+
+Class Variable and Methods
+
+
+
+What are "Class Variables" and how do you denote them?
+	-Variables that share value over all instances
+	double @@snake_case
+
+How are class variables different from "Constants"?
+	-class variables can change while constants SHOULD not(i believe they have the ability to, it throws a warning not an error)
+
+What are "Class Methods" and how do you denote them?
+	-methods that do not need an individual instance, donote with self.
+
+When should you use class methods?
+	- When you're building new instances of a class that have a bunch of known or "preset" features (called "Factory Methods")
+	- When you have some sort of general utility method that should be identical across all instances and won't need to directly access instance variables (called "Utility Methods")
+
+What is a "Factory Method" and why might it save you time?
+	-Allows you to not have to pass a bunch of parameters in when creating a new instance
+
+How do you access instance variables from a class method?
+	- In general, they cannot, but they can take an instance as a parameter and have access, but if you wanted that function, you should just make an instance method.
+
+
+
+
+
+Storing Classes in Multiple Files
+
+
+
+How do you break several classes out into multiple files?
+	- require the files at the top of the current file
+
+
+What is the difference between require and require_relative?
+	- require needs the entire path, require relative just needs the file name, but needs to be located near the file that is calling it.
